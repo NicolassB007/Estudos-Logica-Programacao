@@ -3,21 +3,29 @@
 #include <stdio.h>
 
 int main() {
-    double contador, soma, idade, media;
+    int idade, soma, contador;
+    double media;
 
-    idade = 0;
-    contador = 0;
+    printf("Digite as idades: \n");
+    scanf("%d", &idade);
+
     soma = 0;
+    contador = 0;
 
     while (idade >= 0) {
-        printf("Digite as idades: ");
-        scanf("%lf", &idade);
-        contador = contador + 1;
         soma = soma + idade;
-        media = soma / (contador - 1);
+        contador = contador + 1;
+        scanf("%d", &idade);
     }
 
-    printf("MEDIA = %.2lf", media);
+    if (contador == 0) {
+        printf("IMPOSSIVEL CALCULAR");
+    }
+    
+    else {
+        media = (double) soma / contador;
+        printf("MEDIA = %.2lf\n", media);
+    }
 
     return 0;
 }
